@@ -6,12 +6,13 @@ package Entity;
  */
 public class Radio {
     
-    private boolean isOn;
-    private boolean am;
-    private boolean fm;
-    private boolean decreaseVol;
-    private boolean increaseVol;
-
+    boolean isOn;
+    boolean station;
+    boolean frenquency;
+    boolean maxVOl;
+    boolean minVol;
+    
+    
     public boolean isIsOn() {
         return isOn;
     }
@@ -20,37 +21,35 @@ public class Radio {
         this.isOn = isOn;
     }
 
-    public boolean isAm() {
-        return am;
+    public boolean isStation() {
+        return station;
     }
 
-    public void setAm(boolean am) {
-        this.am = am;
+    public void setStation(boolean station) {
+        this.station = station;
     }
 
-    public boolean isFm() {
-        return fm;
+    public boolean isFrenquency() {
+        return frenquency;
     }
 
-    public void setFm(boolean fm) {
-        this.fm = fm;
+    public void setFrenquency(boolean frenquency) {
+        this.frenquency = frenquency;
     }
 
-    public boolean isDecreaseVol() {
-        return decreaseVol;
+    public boolean isMaxVOl() {
+        return maxVOl;
     }
 
-    public void setDecreaseVol(boolean decreaseVol) {
-        this.decreaseVol = decreaseVol;
+    public void setMaxVOl(boolean maxVOl) {
+        this.maxVOl = maxVOl;
     }
 
-    public boolean isIncreaseVol() {
-        return increaseVol;
+    public boolean isMinVol() {
+        return minVol;
     }
 
-    public void setIncreaseVol(boolean increaseVol) {
-        this.increaseVol = increaseVol;
-    }
-    
-    
+    public void setMinVol(boolean minVol) {
+        this.minVol = minVol;
+    } 
 }
