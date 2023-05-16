@@ -14,8 +14,9 @@ public class
         initComponents(); 
         
         frequencyButton.setEnabled(false);
-        
-        
+        increaseVol.setEnabled(false);
+        decreaseVol.setEnabled(false);
+                
         this.setLocationRelativeTo(null);
     }
     
@@ -50,10 +51,11 @@ public class
 
         menuPane.setBackground(new java.awt.Color(0, 0, 0));
 
-        decreaseVol.setBackground(new java.awt.Color(153, 153, 153));
+        decreaseVol.setBackground(new java.awt.Color(0, 0, 0));
         decreaseVol.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         decreaseVol.setForeground(new java.awt.Color(255, 255, 255));
         decreaseVol.setText("-");
+        decreaseVol.setBorder(null);
         decreaseVol.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         decreaseVol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,10 +63,11 @@ public class
             }
         });
 
-        increaseVol.setBackground(new java.awt.Color(153, 153, 153));
+        increaseVol.setBackground(new java.awt.Color(0, 0, 0));
         increaseVol.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         increaseVol.setForeground(new java.awt.Color(255, 255, 255));
         increaseVol.setText("+");
+        increaseVol.setBorder(null);
         increaseVol.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         increaseVol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,10 +83,11 @@ public class
             }
         });
 
-        frequencyButton.setBackground(new java.awt.Color(153, 153, 153));
+        frequencyButton.setBackground(new java.awt.Color(0, 0, 0));
         frequencyButton.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         frequencyButton.setForeground(new java.awt.Color(255, 255, 255));
         frequencyButton.setText("Frequency");
+        frequencyButton.setBorder(null);
         frequencyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         frequencyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,17 +116,15 @@ public class
                         .addComponent(amIndicator)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(fmIndicator)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(menuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menuPaneLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(decreaseVol))
-                    .addGroup(menuPaneLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(increaseVol)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(menuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(increaseVol)
+                    .addComponent(decreaseVol))
+                .addGap(28, 28, 28))
         );
         menuPaneLayout.setVerticalGroup(
             menuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +140,7 @@ public class
                             .addComponent(amIndicator)
                             .addComponent(fmIndicator))))
                 .addGap(18, 18, 18)
-                .addGroup(menuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(menuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(decreaseVol, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10))
@@ -180,9 +182,11 @@ public class
             .addGroup(contentPanelLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(onButton)
-                    .addComponent(jLabel2))
+                    .addGroup(contentPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
