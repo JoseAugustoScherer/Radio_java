@@ -6,22 +6,19 @@ import Entity.Radio;
  *
  * @author José Augusto Scherer
  */
-public class 
-    RadioInterface 
+public class RadioInterface
         extends javax.swing.JFrame {
 
     public RadioInterface() {
-        initComponents(); 
-        
-        frequencyButton.setEnabled(false);
-        increaseVol.setEnabled(false);
-        decreaseVol.setEnabled(false);
-                
+        initComponents();
+
+        enableButtons();
+
         this.setLocationRelativeTo(null);
     }
-    
+
     Radio radio = new Radio();
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -205,30 +202,40 @@ public class
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void enableButtons() {
+        frequencyButton.setEnabled(false);
+        increaseVol.setEnabled(false);
+        decreaseVol.setEnabled(false);
+    }
+
     private void onButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onButtonActionPerformed
-       if (onButton.isSelected()) {
-          radio.setIsOn(true);
-          frequencyButton.setEnabled(true);
-       } else {
-           radio.setIsOn(false);
-           frequencyButton.setEnabled(false);
-       }
+        if (onButton.isSelected()) {
+            radio.setIsOn(true);
+            frequencyButton.setEnabled(true);
+            increaseVol.setEnabled(true);
+            decreaseVol.setEnabled(true);
+        } else {
+            radio.setIsOn(false);
+            frequencyButton.setEnabled(false);
+            increaseVol.setEnabled(false);
+            decreaseVol.setEnabled(false);
+        }
     }//GEN-LAST:event_onButtonActionPerformed
 
     private void frequencyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frequencyButtonActionPerformed
-       
+
     }//GEN-LAST:event_frequencyButtonActionPerformed
 
     private void increaseVolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseVolActionPerformed
-        
+
     }//GEN-LAST:event_increaseVolActionPerformed
 
     private void decreaseVolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseVolActionPerformed
-       
+
     }//GEN-LAST:event_decreaseVolActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
